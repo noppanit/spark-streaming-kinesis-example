@@ -16,6 +16,12 @@ object SparkStreamKinesis{
       * Change Kinesis App Name to any application name you like and this will be used to create a DynamoDB Table as well
       * Change Kinesis Stream to the stream you created
       * Don't forget to change your region and Kinesis URL endpoint
+      *
+      * This is assuming that you also have setup AWS Credentials in one of these methods.
+      *
+      * http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/auth/DefaultAWSCredentialsProviderChain.html
+      *
+      * If not you can provide awsAccessKey and awsSecretKey to the last two arguments of createStream
       */
 
     val kinesisStream = KinesisUtils.createStream(ssc, "sparrow-ci",
